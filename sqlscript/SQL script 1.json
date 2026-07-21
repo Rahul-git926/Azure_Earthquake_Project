@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "-- This is auto-generated code\nSELECT\n    TOP 100\n    country_code,\n    COUNT(CASE WHEN LOWER(sig_class) = 'low' THEN 1 END) AS low_count,\n    COUNT(CASE WHEN LOWER(sig_class) IN ('medium', 'moderate') THEN 1 END) AS medium_count,\n    COUNT(CASE WHEN LOWER(sig_class) = 'high' THEN 1 END) AS high_count\nFROM\n    OPENROWSET(\n        BULK 'https://datarahul123.dfs.core.windows.net/gold/earthquake_events_gold/**',\n        FORMAT = 'PARQUET'\n    ) AS [result]\nGROUP BY country_code;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
