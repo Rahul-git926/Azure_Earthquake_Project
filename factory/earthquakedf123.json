@@ -1,0 +1,15 @@
+{
+	"name": "earthquakedf123",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b9d60ea7-cbc2-46f6-9c6e-6ee0f3bab5c6",
+		"tenantId": "f81c1591-f508-4823-a0b4-7de01d9286e5"
+	}
+}
